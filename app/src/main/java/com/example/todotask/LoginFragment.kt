@@ -39,16 +39,26 @@ class LoginFragment : Fragment() {
         binding.passErrorTv.visibility = View.VISIBLE
     }
 
+    private fun clearErrorMessages() {
+        binding.numberErrorTv.text = ""
+        binding.numberErrorTv.visibility = View.GONE
+        binding.passErrorTv.text = ""
+        binding.passErrorTv.visibility = View.GONE
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.toolbarInclude.toolbarTitle.text = "Login"
         binding.toolbarInclude.backButton.visibility = View.GONE
+
         binding.imageViewEye.setOnClickListener {
             togglePasswordVisibility()
         }
+
         binding.loginBtn.setOnClickListener {
             val phoneNumber = binding.phoneNumberEt.text.toString()
             val password = binding.editTextPassword.text.toString()
+            clearErrorMessages()
             if (isValidPhoneNumber(phoneNumber)) {
                 if (phoneNumber == "01789803342") {
                     if (isValidPassword(password)) {
@@ -80,16 +90,18 @@ class LoginFragment : Fragment() {
     }
 
     private fun togglePasswordVisibility() {
-        val isPasswordVisible = binding.editTextPassword.inputType != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+        val isPasswordVisible =
+            binding.editTextPassword.inputType != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
 
         if (isPasswordVisible) {
             binding.editTextPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24) // Open eye icon
+            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24)
         } else {
-            binding.editTextPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24) // Closed eye icon
+            binding.editTextPassword.inputType =
+                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24)
         }
-        binding.editTextPassword.setSelection(binding.editTextPassword.text.length) // Fix cursor position
+        binding.editTextPassword.setSelection(binding.editTextPassword.text.length)
     }
 
 }

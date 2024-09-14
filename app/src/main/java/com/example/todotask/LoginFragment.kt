@@ -81,20 +81,20 @@ class LoginFragment : Fragment() {
         return phoneNumber.length == 11 && phoneNumber.startsWith("01")
     }
 
-    private fun togglePasswordVisibility() {
-        val isPasswordVisible =
-            binding.editTextPassword.inputType != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-
-        if (isPasswordVisible) {
-            binding.editTextPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24)
-        } else {
-            binding.editTextPassword.inputType =
-                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24)
-        }
-        binding.editTextPassword.setSelection(binding.editTextPassword.text.length)
-    }
+//    private fun togglePasswordVisibility() {
+//        val isPasswordVisible =
+//            binding.editTextPassword.inputType != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+//
+//        if (isPasswordVisible) {
+//            binding.editTextPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+//            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24)
+//        } else {
+//            binding.editTextPassword.inputType =
+//                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+//            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24)
+//        }
+//        binding.editTextPassword.setSelection(binding.editTextPassword.text.length)
+//    }
 
 }
 

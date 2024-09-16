@@ -114,6 +114,28 @@
         app:layout_constraintTop_toBottomOf="@+id/number_error_tv" />
 
 
+<!--    <com.google.android.material.textfield.TextInputEditText-->
+<!--        android:id="@+id/pass_et"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter your password..."-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/phone_pass_tv">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:inputType="textPassword"-->
+<!--            android:fontFamily="@font/bubble_gumsans_regular"-->
+<!--            android:hint="@string/_000000iii"-->
+<!--            android:textSize="18sp"-->
+<!--            android:padding="8dp"-->
+<!--            android:ems="15"/>-->
+
+<!--    </com.google.android.material.textfield.TextInputEditText>-->
+
+
     <RelativeLayout
         android:id="@+id/pass_et"
         android:layout_width="match_parent"

@@ -73,6 +73,7 @@
         android:background="@drawable/login_et_border"
         android:fontFamily="@font/bubble_gumsans_regular"
         android:hint="@string/_01800000000"
+        android:maxLength="11"
         android:inputType="phone"
         android:padding="8dp"
         android:textSize="18sp"

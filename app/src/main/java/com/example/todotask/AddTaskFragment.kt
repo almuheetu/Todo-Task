@@ -38,8 +38,8 @@ class AddTaskFragment : Fragment() {
             onBackPressed()
         }
 
-        binding.etName.getText()
-        binding.etDetails.getText()
+        binding.etName.text
+        binding.etDetails.text
 
 
         binding.addBtn.setOnClickListener {

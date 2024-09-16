@@ -21,22 +21,6 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    private fun showPhoneNumberError(number: String) {
-        binding.numberErrorTv.text = number
-        binding.numberErrorTv.visibility = View.VISIBLE
-    }
-
-    private fun showPasswordError(password: String) {
-        binding.passErrorTv.text = password
-        binding.passErrorTv.visibility = View.VISIBLE
-    }
-
-    private fun clearErrorMessages() {
-        binding.numberErrorTv.text = ""
-        binding.numberErrorTv.visibility = View.GONE
-        binding.passErrorTv.text = ""
-        binding.passErrorTv.visibility = View.GONE
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -44,7 +28,7 @@ class LoginFragment : Fragment() {
         binding.toolbarInclude.backButton.visibility = View.GONE
 
         binding.imageViewEye.setOnClickListener {
-            togglePasswordVisibility()
+
         }
 
         binding.loginBtn.setOnClickListener {
@@ -52,7 +36,7 @@ class LoginFragment : Fragment() {
             val password = binding.editTextPassword.text.toString()
             clearErrorMessages()
             if (isValidPhoneNumber(phoneNumber)) {
-                if (phoneNumber == "01789803342") {
+                if (phoneNumber == "01308766666") {
                     if (isValidPassword(password)) {
                         if (password == "123456") {
                             val action =
@@ -73,28 +57,31 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun isValidPassword(password: String): Boolean {
-        return password.length >= 6
-    }
 
     private fun isValidPhoneNumber(phoneNumber: String): Boolean {
         return phoneNumber.length == 11 && phoneNumber.startsWith("01")
     }
 
-//    private fun togglePasswordVisibility() {
-//        val isPasswordVisible =
-//            binding.editTextPassword.inputType != InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-//
-//        if (isPasswordVisible) {
-//            binding.editTextPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-//            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24)
-//        } else {
-//            binding.editTextPassword.inputType =
-//                InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-//            binding.imageViewEye.setImageResource(R.drawable.baseline_remove_red_eye_24)
-//        }
-//        binding.editTextPassword.setSelection(binding.editTextPassword.text.length)
-//    }
+    private fun isValidPassword(password: String): Boolean {
+        return password.length >= 6
+    }
+
+    private fun showPhoneNumberError(number: String) {
+        binding.numberErrorTv.text = number
+        binding.numberErrorTv.visibility = View.VISIBLE
+    }
+
+    private fun showPasswordError(password: String) {
+        binding.passErrorTv.text = password
+        binding.passErrorTv.visibility = View.VISIBLE
+    }
+
+    private fun clearErrorMessages() {
+        binding.numberErrorTv.text = ""
+        binding.numberErrorTv.visibility = View.GONE
+        binding.passErrorTv.text = ""
+        binding.passErrorTv.visibility = View.GONE
+    }
 
 }
 
